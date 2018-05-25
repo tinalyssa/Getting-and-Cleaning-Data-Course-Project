@@ -43,8 +43,8 @@ column_name <- colnames(Dataset)
 #2 Extracts only the measurements on the mean and standard deviation for each measurement.
 
   #find all columns with mean and std
-MeanStd <- (grepl("act..",column_name) | grepl("subj..",column_name) | grepl("mean..",column_name) &
-              !grepl("meanFreq..",column_name) | grepl("std..",column_name))
+MeanStd <- (grepl("act..",column_name, ignore.case = TRUE) | grepl("subj..",column_name, ignore.case = TRUE) | grepl("mean..",column_name, ignore.case = TRUE) &
+              !grepl("meanFreq..",column_name, ignore.case = TRUE) | grepl("std..",column_name, ignore.case = TRUE))
   #filter Dataset according to Dataset_meanstd to show columns with mean, std, activity, and subject only
 Dataset <- Dataset[MeanStd==TRUE]
 
